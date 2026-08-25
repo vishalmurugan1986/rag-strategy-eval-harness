@@ -1,0 +1,1869 @@
+[
+  {
+    "chunking": "simple",
+    "retrieval": "vector_only",
+    "num_chunks_indexed": 28,
+    "retrieval_at_k": 0.964,
+    "answer_accuracy": 0.929,
+    "per_question": [
+      {
+        "id": "q01",
+        "question": "How long does access approval typically take for new engineers?",
+        "expected_doc_ids": [
+          "onboarding_eng"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Approval for access to production systems typically takes 1-2 business days.",
+        "reference_answer": "Typically 1-2 business days.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the timeframe of 1-2 business days."
+      },
+      {
+        "id": "q02",
+        "question": "How many PR approvals are required for changes to the payments service?",
+        "expected_doc_ids": [
+          "onboarding_eng"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Two approvals are required for changes touching the payments service.",
+        "reference_answer": "Two approvals.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is that two approvals are required for changes to the payments service."
+      },
+      {
+        "id": "q03",
+        "question": "What command do new engineers run to set up their development environment?",
+        "expected_doc_ids": [
+          "onboarding_eng"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "New engineers run `make bootstrap` to set up their development environment, which installs all dependencies for the services they have access to and sets up pre-commit hooks.",
+        "reference_answer": "make bootstrap",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of running `make bootstrap` to set up the development environment."
+      },
+      {
+        "id": "q04",
+        "question": "What triggers a staging deployment?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Merging to the `main` branch triggers a staging deployment automatically.",
+        "reference_answer": "Merging to main triggers an automatic staging deployment.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer with slightly different wording."
+      },
+      {
+        "id": "q05",
+        "question": "How long does the rollback button take to revert to the last known-good build?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The \"Rollback\" button in the deploy dashboard reverts to the last known-good build within about 2 minutes.",
+        "reference_answer": "About 2 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the time it takes to revert to the last known-good build."
+      },
+      {
+        "id": "q06",
+        "question": "What percentage of traffic does a canary deploy start with?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "deploy_guide"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A canary deploy starts with 5% of traffic for 30 minutes.",
+        "reference_answer": "5% of traffic.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the initial traffic percentage of a canary deploy."
+      },
+      {
+        "id": "q07",
+        "question": "Are Friday deploys after 2pm allowed?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Friday deploys after 2pm are discouraged unless urgent, due to thinner on-call coverage over the weekend.",
+        "reference_answer": "They are discouraged but not banned, unless urgent, due to thinner weekend on-call coverage.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the discouragement of Friday deploys after 2pm and the exception for urgent cases."
+      },
+      {
+        "id": "q08",
+        "question": "What caused the checkout service outage on 2024-03-14?",
+        "expected_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieved_doc_ids": [
+          "incident_postmortem_api",
+          "incident_postmortem_db",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The checkout service outage on 2024-03-14 was caused by a connection leak in the retry logic, resulting in database connection pool exhaustion. This issue was introduced by a deploy that completed at 14:02.",
+        "reference_answer": "Database connection pool exhaustion caused by a connection leak in newly deployed retry logic.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the connection leak and database connection pool exhaustion."
+      },
+      {
+        "id": "q09",
+        "question": "How long did the checkout service database outage last?",
+        "expected_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_db",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The checkout service experienced a 40-minute partial outage.",
+        "reference_answer": "About 40 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the 40-minute duration from the reference answer."
+      },
+      {
+        "id": "q10",
+        "question": "What long-term fix was implemented after the connection pool exhaustion incident?",
+        "expected_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieved_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A lint rule was added to flag connection acquisition without a corresponding `finally` block or context manager.",
+        "reference_answer": "A lint rule that flags connection acquisition without a corresponding finally block or context manager.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key fact of the reference answer."
+      },
+      {
+        "id": "q11",
+        "question": "What caused the mobile app throttling incident in June 2024?",
+        "expected_doc_ids": [
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The mobile app throttling incident in June 2024 was caused by a configuration change to the API gateway's rate limiter, where the new rate limit was set per-IP instead of per-API-key, disproportionately throttling mobile users behind carrier-grade NAT sharing IP addresses.",
+        "reference_answer": "The rate limiter was configured per-IP instead of per-API-key, throttling mobile users sharing carrier-grade NAT IPs.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key facts of the reference answer, including the misconfigured rate limiter and its impact on mobile users."
+      },
+      {
+        "id": "q12",
+        "question": "What percentage of mobile users were affected by the rate limit misconfiguration?",
+        "expected_doc_ids": [
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Roughly 15% of mobile users were affected by the rate limit misconfiguration.",
+        "reference_answer": "Roughly 15%.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer with identical wording."
+      },
+      {
+        "id": "q13",
+        "question": "How long did the API gateway rate limit incident last?",
+        "expected_doc_ids": [
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The API gateway rate limit incident lasted 22 minutes, from 09:14 to 09:28 (when the rollback was initiated) and the issue was reported at 09:14, but the config change was deployed at 09:10, so the issue was likely present for 4 minutes before it was reported.",
+        "reference_answer": "About 22 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the incident's duration, providing additional context."
+      },
+      {
+        "id": "q14",
+        "question": "What connection pooling mode does the payments service use and why?",
+        "expected_doc_ids": [
+          "architecture_decision_db",
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_db",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The payments service uses session-level database connection pooling. This is because the payments service relies on session-scoped features like advisory locks, as stated in ADR-014.",
+        "reference_answer": "Session-level pooling, because it relies on advisory locks for distributed locking, which are incompatible with transaction-level pooling.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of session-level pooling and its reason, although it omits the incompatibility with transaction-level pooling."
+      },
+      {
+        "id": "q15",
+        "question": "What tool did Northwind adopt for database connection pooling?",
+        "expected_doc_ids": [
+          "architecture_decision_db"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_db",
+          "incident_postmortem_db",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "PgBouncer was adopted as a connection pooler in front of the primary database.",
+        "reference_answer": "PgBouncer.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer correctly identifies PgBouncer as the adopted tool for database connection pooling."
+      },
+      {
+        "id": "q16",
+        "question": "How are API gateway rate limits keyed after ADR-021?",
+        "expected_doc_ids": [
+          "architecture_decision_api"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "API gateway rate limits are keyed by API key, not by IP address, as per ADR-021.",
+        "reference_answer": "By API key, not by IP address.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key fact of the reference answer."
+      },
+      {
+        "id": "q17",
+        "question": "What incident prompted ADR-021?",
+        "expected_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "incident_postmortem_api",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "There is no information about ADR-021 in the provided context.",
+        "reference_answer": "The June 2024 API Gateway Rate Limit Misconfiguration incident.",
+        "answer_score": 0,
+        "judge_reasoning": "The generated answer is a non-answer when the reference has a real answer."
+      },
+      {
+        "id": "q18",
+        "question": "Where should suspected security incidents be reported?",
+        "expected_doc_ids": [
+          "security_policy"
+        ],
+        "retrieved_doc_ids": [
+          "oncall_runbook",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Suspected security incidents should be reported immediately to the security channel, not the general incident channel.",
+        "reference_answer": "The security channel, not the general incident channel.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key facts of the reference answer."
+      },
+      {
+        "id": "q19",
+        "question": "How often are secrets rotated?",
+        "expected_doc_ids": [
+          "security_policy"
+        ],
+        "retrieved_doc_ids": [
+          "payments_service_overview",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Secrets are rotated automatically every 90 days.",
+        "reference_answer": "Every 90 days.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the frequency of secret rotation."
+      },
+      {
+        "id": "q20",
+        "question": "How can external researchers report vulnerabilities?",
+        "expected_doc_ids": [
+          "security_policy"
+        ],
+        "retrieved_doc_ids": [
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "External security researchers can report vulnerabilities through the bug-bounty program.",
+        "reference_answer": "Through the bug-bounty program.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer with slightly different wording."
+      },
+      {
+        "id": "q21",
+        "question": "What naming convention is used for multi-word API resources?",
+        "expected_doc_ids": [
+          "api_style_guide"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Kebab-case is used for multi-word API resources, as seen in the example `/order-items`.",
+        "reference_answer": "Kebab-case, with plural nouns for collections.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer correctly identifies kebab-case as the naming convention for multi-word API resources."
+      },
+      {
+        "id": "q22",
+        "question": "What HTTP status code is used for rate limiting in the API style guide?",
+        "expected_doc_ids": [
+          "api_style_guide"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The HTTP status code used for rate limiting in the API style guide is 429.",
+        "reference_answer": "429.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer correctly states the HTTP status code for rate limiting as 429, matching the reference answer."
+      },
+      {
+        "id": "q23",
+        "question": "How long does an on-call engineer have to acknowledge a page?",
+        "expected_doc_ids": [
+          "oncall_runbook"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "An on-call engineer has 5 minutes to acknowledge a page.",
+        "reference_answer": "5 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer matches the key fact of the reference answer."
+      },
+      {
+        "id": "q24",
+        "question": "What should on-call do first if a recent deploy correlates with an alert?",
+        "expected_doc_ids": [
+          "oncall_runbook"
+        ],
+        "retrieved_doc_ids": [
+          "incident_postmortem_db",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "If a recent deploy is the likely cause of an alert, the on-call engineer should rollback first and then investigate the root cause after service is restored.",
+        "reference_answer": "Rollback first, then investigate the root cause after service is restored.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the order of actions to take."
+      },
+      {
+        "id": "q25",
+        "question": "When is a postmortem required after an incident?",
+        "expected_doc_ids": [
+          "oncall_runbook"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A postmortem is required within 3 business days after an incident that causes customer-visible impact.",
+        "reference_answer": "Within 3 business days, for any incident causing customer-visible impact.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer with minimal wording differences."
+      },
+      {
+        "id": "q26",
+        "question": "How many external payment processors does the payments service integrate with?",
+        "expected_doc_ids": [
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The payments service integrates with two external payment processors for redundancy.",
+        "reference_answer": "Two, for redundancy.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the number of payment processors and the reason for integration."
+      },
+      {
+        "id": "q27",
+        "question": "What test suite must pass before deploying changes to the payments service?",
+        "expected_doc_ids": [
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng"
+        ],
+        "retrieval_hit": false,
+        "generated_answer": "The provided context does not specify a test suite that must pass before deploying changes to the payments service.",
+        "reference_answer": "The transaction-simulation test suite, which replays historical transaction patterns against a sandboxed processor.",
+        "answer_score": 0,
+        "judge_reasoning": "The generated answer is a non-answer when the reference has a real answer."
+      },
+      {
+        "id": "q28",
+        "question": "Does the payments service share an on-call rotation with general engineering?",
+        "expected_doc_ids": [
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "No, the payments service has a dedicated on-call rotation separate from general engineering on-call. This is due to the regulatory and financial sensitivity of issues in this service.",
+        "reference_answer": "No, it has its own dedicated on-call rotation due to regulatory and financial sensitivity.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the dedicated on-call rotation and the reason for it."
+      }
+    ]
+  },
+  {
+    "chunking": "simple",
+    "retrieval": "hybrid_rerank",
+    "num_chunks_indexed": 28,
+    "retrieval_at_k": 1.0,
+    "answer_accuracy": 1.0,
+    "per_question": [
+      {
+        "id": "q01",
+        "question": "How long does access approval typically take for new engineers?",
+        "expected_doc_ids": [
+          "onboarding_eng"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Approval for access to production systems typically takes 1-2 business days.",
+        "reference_answer": "Typically 1-2 business days.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the timeframe for access approval."
+      },
+      {
+        "id": "q02",
+        "question": "How many PR approvals are required for changes to the payments service?",
+        "expected_doc_ids": [
+          "onboarding_eng"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Two approvals are required for changes touching the payments service.",
+        "reference_answer": "Two approvals.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of requiring two approvals for changes to the payments service."
+      },
+      {
+        "id": "q03",
+        "question": "What command do new engineers run to set up their development environment?",
+        "expected_doc_ids": [
+          "onboarding_eng"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "New engineers run `make bootstrap` to set up their development environment, which installs all dependencies for the services they have access to and sets up pre-commit hooks for linting and unit tests.",
+        "reference_answer": "make bootstrap",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of running `make bootstrap` to set up the development environment."
+      },
+      {
+        "id": "q04",
+        "question": "What triggers a staging deployment?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_api",
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Merging to the `main` branch triggers a staging deployment automatically.",
+        "reference_answer": "Merging to main triggers an automatic staging deployment.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer with slightly different wording."
+      },
+      {
+        "id": "q05",
+        "question": "How long does the rollback button take to revert to the last known-good build?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The \"Rollback\" button in the deploy dashboard reverts to the last known-good build within about 2 minutes.",
+        "reference_answer": "About 2 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the time it takes to revert to the last known-good build."
+      },
+      {
+        "id": "q06",
+        "question": "What percentage of traffic does a canary deploy start with?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A canary deploy starts with 5% of traffic for 30 minutes.",
+        "reference_answer": "5% of traffic.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the initial traffic percentage of a canary deploy."
+      },
+      {
+        "id": "q07",
+        "question": "Are Friday deploys after 2pm allowed?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Friday deploys after 2pm are discouraged unless urgent, due to thinner on-call coverage over the weekend.",
+        "reference_answer": "They are discouraged but not banned, unless urgent, due to thinner weekend on-call coverage.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the discouragement of Friday deploys after 2pm and the exception for urgent cases."
+      },
+      {
+        "id": "q08",
+        "question": "What caused the checkout service outage on 2024-03-14?",
+        "expected_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api",
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The checkout service outage on 2024-03-14 was caused by a connection leak in the retry logic, resulting in database connection pool exhaustion. This issue was introduced by a deploy that completed at 14:02.",
+        "reference_answer": "Database connection pool exhaustion caused by a connection leak in newly deployed retry logic.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the connection leak and database connection pool exhaustion."
+      },
+      {
+        "id": "q09",
+        "question": "How long did the checkout service database outage last?",
+        "expected_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_db",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The checkout service experienced a 40-minute partial outage due to database connection pool exhaustion.",
+        "reference_answer": "About 40 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the 40-minute duration from the reference answer."
+      },
+      {
+        "id": "q10",
+        "question": "What long-term fix was implemented after the connection pool exhaustion incident?",
+        "expected_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieved_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A lint rule was added to flag connection acquisition without a corresponding `finally` block or context manager.",
+        "reference_answer": "A lint rule that flags connection acquisition without a corresponding finally block or context manager.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key fact of the reference answer."
+      },
+      {
+        "id": "q11",
+        "question": "What caused the mobile app throttling incident in June 2024?",
+        "expected_doc_ids": [
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A configuration change to the API gateway's rate limiter caused legitimate traffic from the mobile app to be throttled, resulting in a partial outage.",
+        "reference_answer": "The rate limiter was configured per-IP instead of per-API-key, throttling mobile users sharing carrier-grade NAT IPs.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact that a configuration change to the rate limiter caused the throttling incident."
+      },
+      {
+        "id": "q12",
+        "question": "What percentage of mobile users were affected by the rate limit misconfiguration?",
+        "expected_doc_ids": [
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Roughly 15% of mobile users were affected by the rate limit misconfiguration, resulting in a 22-minute partial outage.",
+        "reference_answer": "Roughly 15%.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of 15% of mobile users being affected by the rate limit misconfiguration."
+      },
+      {
+        "id": "q13",
+        "question": "How long did the API gateway rate limit incident last?",
+        "expected_doc_ids": [
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The API gateway rate limit incident lasted for 22 minutes, from 09:10 (when the rate limit config change was deployed) to 09:32 (when the rollback of the config change would have been completed, although the exact completion time is not specified, the rollback was initiated at 09:28).",
+        "reference_answer": "About 22 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the incident duration from the reference answer."
+      },
+      {
+        "id": "q14",
+        "question": "What connection pooling mode does the payments service use and why?",
+        "expected_doc_ids": [
+          "architecture_decision_db",
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_db",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The payments service uses session-level database connection pooling. This is due to the service's reliance on session-scoped features like advisory locks, and also because of its sensitivity, which requires stricter requirements than other services.",
+        "reference_answer": "Session-level pooling, because it relies on advisory locks for distributed locking, which are incompatible with transaction-level pooling.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of session-level pooling and its reason, although with slightly different wording."
+      },
+      {
+        "id": "q15",
+        "question": "What tool did Northwind adopt for database connection pooling?",
+        "expected_doc_ids": [
+          "architecture_decision_db"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_db",
+          "onboarding_eng"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Northwind adopted PgBouncer as a connection pooler in front of the primary database.",
+        "reference_answer": "PgBouncer.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer correctly identifies PgBouncer as the tool adopted by Northwind for database connection pooling."
+      },
+      {
+        "id": "q16",
+        "question": "How are API gateway rate limits keyed after ADR-021?",
+        "expected_doc_ids": [
+          "architecture_decision_api"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "API gateway rate limits are keyed by API key, not by IP address, as per ADR-021.",
+        "reference_answer": "By API key, not by IP address.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key fact of the reference answer."
+      },
+      {
+        "id": "q17",
+        "question": "What incident prompted ADR-021?",
+        "expected_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "architecture_decision_db",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The June 2024 rate-limit incident prompted ADR-021, which led to the standardization of rate limiting at the API gateway.",
+        "reference_answer": "The June 2024 API Gateway Rate Limit Misconfiguration incident.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the June 2024 incident prompting ADR-021."
+      },
+      {
+        "id": "q18",
+        "question": "Where should suspected security incidents be reported?",
+        "expected_doc_ids": [
+          "security_policy"
+        ],
+        "retrieved_doc_ids": [
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Suspected security incidents should be reported immediately to the security channel, not the general incident channel.",
+        "reference_answer": "The security channel, not the general incident channel.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key facts of the reference answer."
+      },
+      {
+        "id": "q19",
+        "question": "How often are secrets rotated?",
+        "expected_doc_ids": [
+          "security_policy"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Secrets are rotated automatically every 90 days.",
+        "reference_answer": "Every 90 days.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the frequency of secret rotation."
+      },
+      {
+        "id": "q20",
+        "question": "How can external researchers report vulnerabilities?",
+        "expected_doc_ids": [
+          "security_policy"
+        ],
+        "retrieved_doc_ids": [
+          "oncall_runbook",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "External security researchers can report vulnerabilities through the bug-bounty program.",
+        "reference_answer": "Through the bug-bounty program.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer with slightly different wording."
+      },
+      {
+        "id": "q21",
+        "question": "What naming convention is used for multi-word API resources?",
+        "expected_doc_ids": [
+          "api_style_guide"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Kebab-case is used for multi-word API resources, as seen in the example `/order-items`.",
+        "reference_answer": "Kebab-case, with plural nouns for collections.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer correctly identifies kebab-case as the naming convention and provides a relevant example."
+      },
+      {
+        "id": "q22",
+        "question": "What HTTP status code is used for rate limiting in the API style guide?",
+        "expected_doc_ids": [
+          "api_style_guide"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The HTTP status code used for rate limiting in the API style guide is 429.",
+        "reference_answer": "429.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer correctly captures the key fact of the reference answer."
+      },
+      {
+        "id": "q23",
+        "question": "How long does an on-call engineer have to acknowledge a page?",
+        "expected_doc_ids": [
+          "oncall_runbook"
+        ],
+        "retrieved_doc_ids": [
+          "incident_postmortem_db",
+          "onboarding_eng",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "An on-call engineer has 5 minutes to acknowledge a page.",
+        "reference_answer": "5 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer matches the key fact of the reference answer."
+      },
+      {
+        "id": "q24",
+        "question": "What should on-call do first if a recent deploy correlates with an alert?",
+        "expected_doc_ids": [
+          "oncall_runbook"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "If a recent deploy is the likely cause of an alert, the on-call engineer should rollback first and then investigate the root cause after service is restored.",
+        "reference_answer": "Rollback first, then investigate the root cause after service is restored.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer."
+      },
+      {
+        "id": "q25",
+        "question": "When is a postmortem required after an incident?",
+        "expected_doc_ids": [
+          "oncall_runbook"
+        ],
+        "retrieved_doc_ids": [
+          "oncall_runbook",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A postmortem is required within 3 business days after an incident that causes customer-visible impact.",
+        "reference_answer": "Within 3 business days, for any incident causing customer-visible impact.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key facts of the reference answer."
+      },
+      {
+        "id": "q26",
+        "question": "How many external payment processors does the payments service integrate with?",
+        "expected_doc_ids": [
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The payments service integrates with two external payment processors for redundancy.",
+        "reference_answer": "Two, for redundancy.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer."
+      },
+      {
+        "id": "q27",
+        "question": "What test suite must pass before deploying changes to the payments service?",
+        "expected_doc_ids": [
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The full transaction-simulation test suite must pass before deploying changes to the payments service. This test suite replays a fixed set of historical transaction patterns against a sandboxed processor.",
+        "reference_answer": "The transaction-simulation test suite, which replays historical transaction patterns against a sandboxed processor.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the test suite name and its functionality."
+      },
+      {
+        "id": "q28",
+        "question": "Does the payments service share an on-call rotation with general engineering?",
+        "expected_doc_ids": [
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "No, the payments service has a dedicated on-call rotation separate from general engineering on-call due to its regulatory and financial sensitivity.",
+        "reference_answer": "No, it has its own dedicated on-call rotation due to regulatory and financial sensitivity.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the dedicated on-call rotation and the reasons for it."
+      }
+    ]
+  },
+  {
+    "chunking": "semantic",
+    "retrieval": "vector_only",
+    "num_chunks_indexed": 19,
+    "retrieval_at_k": 0.964,
+    "answer_accuracy": 0.964,
+    "per_question": [
+      {
+        "id": "q01",
+        "question": "How long does access approval typically take for new engineers?",
+        "expected_doc_ids": [
+          "onboarding_eng"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Access approval for new engineers typically takes 1-2 business days.",
+        "reference_answer": "Typically 1-2 business days.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer matches the reference answer exactly."
+      },
+      {
+        "id": "q02",
+        "question": "How many PR approvals are required for changes to the payments service?",
+        "expected_doc_ids": [
+          "onboarding_eng"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Two approvals are required for changes touching the payments service.",
+        "reference_answer": "Two approvals.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of requiring two approvals for changes to the payments service."
+      },
+      {
+        "id": "q03",
+        "question": "What command do new engineers run to set up their development environment?",
+        "expected_doc_ids": [
+          "onboarding_eng"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "New engineers run `make bootstrap` to set up their development environment. This command installs all dependencies for the services they have access to and sets up pre-commit hooks for linting and unit tests.",
+        "reference_answer": "make bootstrap",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of running `make bootstrap` to set up the development environment."
+      },
+      {
+        "id": "q04",
+        "question": "What triggers a staging deployment?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_db",
+          "onboarding_eng"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Merging to the `main` branch triggers a staging deployment automatically.",
+        "reference_answer": "Merging to main triggers an automatic staging deployment.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer with slightly different wording."
+      },
+      {
+        "id": "q05",
+        "question": "How long does the rollback button take to revert to the last known-good build?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The \"Rollback\" button in the deploy dashboard reverts to the last known-good build within about 2 minutes.",
+        "reference_answer": "About 2 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the time it takes to revert to the last known-good build."
+      },
+      {
+        "id": "q06",
+        "question": "What percentage of traffic does a canary deploy start with?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_api",
+          "onboarding_eng"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A canary deploy starts with 5% of traffic for 30 minutes.",
+        "reference_answer": "5% of traffic.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the initial traffic percentage of a canary deploy."
+      },
+      {
+        "id": "q07",
+        "question": "Are Friday deploys after 2pm allowed?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Friday deploys after 2pm are discouraged unless urgent, due to thinner on-call coverage over the weekend.",
+        "reference_answer": "They are discouraged but not banned, unless urgent, due to thinner weekend on-call coverage.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the discouragement of Friday deploys after 2pm and the exception for urgent cases."
+      },
+      {
+        "id": "q08",
+        "question": "What caused the checkout service outage on 2024-03-14?",
+        "expected_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_api",
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The checkout service outage on 2024-03-14 was caused by a connection leak in the retry logic, introduced by a deploy, which led to database connection pool exhaustion.",
+        "reference_answer": "Database connection pool exhaustion caused by a connection leak in newly deployed retry logic.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the connection leak and database connection pool exhaustion."
+      },
+      {
+        "id": "q09",
+        "question": "How long did the checkout service database outage last?",
+        "expected_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieved_doc_ids": [
+          "incident_postmortem_api",
+          "incident_postmortem_db",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The checkout service database outage lasted 40 minutes, from 14:15 (when the error rate began climbing) to 14:42 (when error rates returned to baseline) and 14:02 (deploy completion) to 14:42 (error rates return to baseline) with the root cause identified at 14:30 and rollback initiated at 14:35.",
+        "reference_answer": "About 40 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the outage duration, which is about 40 minutes."
+      },
+      {
+        "id": "q10",
+        "question": "What long-term fix was implemented after the connection pool exhaustion incident?",
+        "expected_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_db",
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The long-term fix implemented after the connection pool exhaustion incident was adding a lint rule that flags connection acquisition without a corresponding `finally` block or context manager.",
+        "reference_answer": "A lint rule that flags connection acquisition without a corresponding finally block or context manager.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key fact of the reference answer."
+      },
+      {
+        "id": "q11",
+        "question": "What caused the mobile app throttling incident in June 2024?",
+        "expected_doc_ids": [
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The mobile app throttling incident in June 2024 was caused by a configuration change to the API gateway's rate limiter, where the new rate limit was set per-IP instead of per-API-key. This disproportionately throttled mobile users behind carrier-grade NAT sharing IP addresses.",
+        "reference_answer": "The rate limiter was configured per-IP instead of per-API-key, throttling mobile users sharing carrier-grade NAT IPs.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key facts of the reference answer."
+      },
+      {
+        "id": "q12",
+        "question": "What percentage of mobile users were affected by the rate limit misconfiguration?",
+        "expected_doc_ids": [
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Roughly 15% of mobile users were affected by the rate limit misconfiguration.",
+        "reference_answer": "Roughly 15%.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key fact from the reference answer."
+      },
+      {
+        "id": "q13",
+        "question": "How long did the API gateway rate limit incident last?",
+        "expected_doc_ids": [
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The API gateway rate limit incident lasted for 22 minutes, from 09:14 to 09:32, when error rates returned to baseline after the rollback of the config change.",
+        "reference_answer": "About 22 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the incident duration from the reference answer."
+      },
+      {
+        "id": "q14",
+        "question": "What connection pooling mode does the payments service use and why?",
+        "expected_doc_ids": [
+          "architecture_decision_db",
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_db",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The payments service uses session-level connection pooling. This is because it relies on session-scoped features like advisory locks for distributed locking, which are incompatible with transaction-level pooling.",
+        "reference_answer": "Session-level pooling, because it relies on advisory locks for distributed locking, which are incompatible with transaction-level pooling.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the connection pooling mode and the reason for its use."
+      },
+      {
+        "id": "q15",
+        "question": "What tool did Northwind adopt for database connection pooling?",
+        "expected_doc_ids": [
+          "architecture_decision_db"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_db",
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The context does not mention \"Northwind\". However, it does mention that the decision was made to adopt PgBouncer as a connection pooler in front of the primary database.",
+        "reference_answer": "PgBouncer.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of adopting PgBouncer for database connection pooling."
+      },
+      {
+        "id": "q16",
+        "question": "How are API gateway rate limits keyed after ADR-021?",
+        "expected_doc_ids": [
+          "architecture_decision_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "API gateway rate limits are keyed by API key, not by IP address, as per ADR-021.",
+        "reference_answer": "By API key, not by IP address.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key fact of the reference answer."
+      },
+      {
+        "id": "q17",
+        "question": "What incident prompted ADR-021?",
+        "expected_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "oncall_runbook",
+          "security_policy"
+        ],
+        "retrieval_hit": false,
+        "generated_answer": "There is no information in the provided context about ADR-021 or any incident that prompted it.",
+        "reference_answer": "The June 2024 API Gateway Rate Limit Misconfiguration incident.",
+        "answer_score": 0,
+        "judge_reasoning": "The generated answer is a non-answer when the reference has a real answer."
+      },
+      {
+        "id": "q18",
+        "question": "Where should suspected security incidents be reported?",
+        "expected_doc_ids": [
+          "security_policy"
+        ],
+        "retrieved_doc_ids": [
+          "oncall_runbook",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Suspected security incidents should be reported immediately to the security channel, not the general incident channel.",
+        "reference_answer": "The security channel, not the general incident channel.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key fact of reporting security incidents to the security channel."
+      },
+      {
+        "id": "q19",
+        "question": "How often are secrets rotated?",
+        "expected_doc_ids": [
+          "security_policy"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_db",
+          "deploy_guide",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Secrets are rotated automatically every 90 days.",
+        "reference_answer": "Every 90 days.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the frequency of secret rotation."
+      },
+      {
+        "id": "q20",
+        "question": "How can external researchers report vulnerabilities?",
+        "expected_doc_ids": [
+          "security_policy"
+        ],
+        "retrieved_doc_ids": [
+          "oncall_runbook",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "External security researchers can report vulnerabilities through the bug-bounty program.",
+        "reference_answer": "Through the bug-bounty program.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer with slightly different wording."
+      },
+      {
+        "id": "q21",
+        "question": "What naming convention is used for multi-word API resources?",
+        "expected_doc_ids": [
+          "api_style_guide"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Kebab-case is used for multi-word API resources, as seen in the example `/order-items`.",
+        "reference_answer": "Kebab-case, with plural nouns for collections.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer correctly identifies kebab-case as the naming convention for multi-word API resources."
+      },
+      {
+        "id": "q22",
+        "question": "What HTTP status code is used for rate limiting in the API style guide?",
+        "expected_doc_ids": [
+          "api_style_guide"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "429 is the HTTP status code used for rate limiting in the API style guide.",
+        "reference_answer": "429.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer correctly captures the key fact of the reference answer."
+      },
+      {
+        "id": "q23",
+        "question": "How long does an on-call engineer have to acknowledge a page?",
+        "expected_doc_ids": [
+          "oncall_runbook"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "An on-call engineer has 5 minutes to acknowledge a page.",
+        "reference_answer": "5 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer matches the key fact of the reference answer."
+      },
+      {
+        "id": "q24",
+        "question": "What should on-call do first if a recent deploy correlates with an alert?",
+        "expected_doc_ids": [
+          "oncall_runbook"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_db",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "If a recent deploy is the likely cause of the alert, the on-call engineer should rollback first and then investigate the root cause after service is restored.",
+        "reference_answer": "Rollback first, then investigate the root cause after service is restored.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer."
+      },
+      {
+        "id": "q25",
+        "question": "When is a postmortem required after an incident?",
+        "expected_doc_ids": [
+          "oncall_runbook"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "oncall_runbook",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A postmortem is required within 3 business days after any incident that causes customer-visible impact. It must be completed using the standard postmortem template.",
+        "reference_answer": "Within 3 business days, for any incident causing customer-visible impact.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the timeframe and condition for requiring a postmortem."
+      },
+      {
+        "id": "q26",
+        "question": "How many external payment processors does the payments service integrate with?",
+        "expected_doc_ids": [
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The payments service integrates with two external payment processors for redundancy.",
+        "reference_answer": "Two, for redundancy.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the number of payment processors and the reason for integration."
+      },
+      {
+        "id": "q27",
+        "question": "What test suite must pass before deploying changes to the payments service?",
+        "expected_doc_ids": [
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The full transaction-simulation test suite must pass before deploying changes to the payments service. This test suite replays a fixed set of historical transaction patterns against a sandboxed processor.",
+        "reference_answer": "The transaction-simulation test suite, which replays historical transaction patterns against a sandboxed processor.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the test suite name and its functionality."
+      },
+      {
+        "id": "q28",
+        "question": "Does the payments service share an on-call rotation with general engineering?",
+        "expected_doc_ids": [
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "No, the payments service has a dedicated on-call rotation separate from general engineering on-call.",
+        "reference_answer": "No, it has its own dedicated on-call rotation due to regulatory and financial sensitivity.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact that the payments service has its own dedicated on-call rotation."
+      }
+    ]
+  },
+  {
+    "chunking": "semantic",
+    "retrieval": "hybrid_rerank",
+    "num_chunks_indexed": 19,
+    "retrieval_at_k": 1.0,
+    "answer_accuracy": 0.964,
+    "per_question": [
+      {
+        "id": "q01",
+        "question": "How long does access approval typically take for new engineers?",
+        "expected_doc_ids": [
+          "onboarding_eng"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Approval for access to production systems typically takes 1-2 business days.",
+        "reference_answer": "Typically 1-2 business days.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the timeframe for access approval."
+      },
+      {
+        "id": "q02",
+        "question": "How many PR approvals are required for changes to the payments service?",
+        "expected_doc_ids": [
+          "onboarding_eng"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Two approvals are required for changes touching the payments service.",
+        "reference_answer": "Two approvals.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of requiring two approvals for changes to the payments service."
+      },
+      {
+        "id": "q03",
+        "question": "What command do new engineers run to set up their development environment?",
+        "expected_doc_ids": [
+          "onboarding_eng"
+        ],
+        "retrieved_doc_ids": [
+          "onboarding_eng",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "New engineers run `make bootstrap` to set up their development environment. This command installs all dependencies for the services they have access to and sets up pre-commit hooks for linting and unit tests.",
+        "reference_answer": "make bootstrap",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of running `make bootstrap` to set up the development environment."
+      },
+      {
+        "id": "q04",
+        "question": "What triggers a staging deployment?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Merging to the `main` branch triggers a staging deployment automatically.",
+        "reference_answer": "Merging to main triggers an automatic staging deployment.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer with slightly different wording."
+      },
+      {
+        "id": "q05",
+        "question": "How long does the rollback button take to revert to the last known-good build?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The rollback button in the deploy dashboard reverts to the last known-good build within about 2 minutes.",
+        "reference_answer": "About 2 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the time it takes for the rollback button to revert to the last known-good build."
+      },
+      {
+        "id": "q06",
+        "question": "What percentage of traffic does a canary deploy start with?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_api",
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A canary deploy starts with 5% of traffic for 30 minutes.",
+        "reference_answer": "5% of traffic.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the initial traffic percentage of a canary deploy."
+      },
+      {
+        "id": "q07",
+        "question": "Are Friday deploys after 2pm allowed?",
+        "expected_doc_ids": [
+          "deploy_guide"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Friday deploys after 2pm are discouraged unless urgent, due to thinner on-call coverage over the weekend.",
+        "reference_answer": "They are discouraged but not banned, unless urgent, due to thinner weekend on-call coverage.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the discouragement of Friday deploys after 2pm and the exception for urgent cases."
+      },
+      {
+        "id": "q08",
+        "question": "What caused the checkout service outage on 2024-03-14?",
+        "expected_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api",
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The checkout service outage on 2024-03-14 was caused by a connection leak in the retry logic, which led to database connection pool exhaustion. This issue was introduced by a deploy to the checkout service that completed at 14:02.",
+        "reference_answer": "Database connection pool exhaustion caused by a connection leak in newly deployed retry logic.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the connection leak and database connection pool exhaustion."
+      },
+      {
+        "id": "q09",
+        "question": "How long did the checkout service database outage last?",
+        "expected_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieved_doc_ids": [
+          "incident_postmortem_db",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The checkout service experienced a 40-minute partial outage.",
+        "reference_answer": "About 40 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the 40-minute duration from the reference answer."
+      },
+      {
+        "id": "q10",
+        "question": "What long-term fix was implemented after the connection pool exhaustion incident?",
+        "expected_doc_ids": [
+          "incident_postmortem_db"
+        ],
+        "retrieved_doc_ids": [
+          "incident_postmortem_db",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A lint rule was added to flag connection acquisition without a corresponding `finally` block or context manager.",
+        "reference_answer": "A lint rule that flags connection acquisition without a corresponding finally block or context manager.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key fact of the reference answer, describing the lint rule implementation."
+      },
+      {
+        "id": "q11",
+        "question": "What caused the mobile app throttling incident in June 2024?",
+        "expected_doc_ids": [
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A configuration change to the API gateway's rate limiter caused legitimate traffic from the mobile app to be throttled.",
+        "reference_answer": "The rate limiter was configured per-IP instead of per-API-key, throttling mobile users sharing carrier-grade NAT IPs.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of a configuration change causing the throttling incident."
+      },
+      {
+        "id": "q12",
+        "question": "What percentage of mobile users were affected by the rate limit misconfiguration?",
+        "expected_doc_ids": [
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Roughly 15% of mobile users were affected by the rate limit misconfiguration.",
+        "reference_answer": "Roughly 15%.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer with the same percentage."
+      },
+      {
+        "id": "q13",
+        "question": "How long did the API gateway rate limit incident last?",
+        "expected_doc_ids": [
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The API gateway rate limit incident lasted for 22 minutes.",
+        "reference_answer": "About 22 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key fact of the incident's duration from the reference answer."
+      },
+      {
+        "id": "q14",
+        "question": "What connection pooling mode does the payments service use and why?",
+        "expected_doc_ids": [
+          "architecture_decision_db",
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_db",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The payments service uses session-level connection pooling. This is because it relies on advisory locks for distributed locking, which is incompatible with transaction-level pooling.",
+        "reference_answer": "Session-level pooling, because it relies on advisory locks for distributed locking, which are incompatible with transaction-level pooling.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer with similar wording."
+      },
+      {
+        "id": "q15",
+        "question": "What tool did Northwind adopt for database connection pooling?",
+        "expected_doc_ids": [
+          "architecture_decision_db"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_db",
+          "incident_postmortem_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "PgBouncer was adopted as the connection pooler in front of the primary database.",
+        "reference_answer": "PgBouncer.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer correctly identifies PgBouncer as the adopted tool for database connection pooling."
+      },
+      {
+        "id": "q16",
+        "question": "How are API gateway rate limits keyed after ADR-021?",
+        "expected_doc_ids": [
+          "architecture_decision_api"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "API gateway rate limits are keyed by API key, not by IP address, as per ADR-021.",
+        "reference_answer": "By API key, not by IP address.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key fact of the reference answer."
+      },
+      {
+        "id": "q17",
+        "question": "What incident prompted ADR-021?",
+        "expected_doc_ids": [
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api",
+          "architecture_decision_db"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The June 2024 rate-limit incident prompted ADR-021, which established a standard for configuring rate limits at the API gateway.",
+        "reference_answer": "The June 2024 API Gateway Rate Limit Misconfiguration incident.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the June 2024 incident prompting ADR-021."
+      },
+      {
+        "id": "q18",
+        "question": "Where should suspected security incidents be reported?",
+        "expected_doc_ids": [
+          "security_policy"
+        ],
+        "retrieved_doc_ids": [
+          "oncall_runbook",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Suspected security incidents should be reported immediately to the security channel, not the general incident channel.",
+        "reference_answer": "The security channel, not the general incident channel.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key facts of the reference answer."
+      },
+      {
+        "id": "q19",
+        "question": "How often are secrets rotated?",
+        "expected_doc_ids": [
+          "security_policy"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Secrets are rotated automatically every 90 days.",
+        "reference_answer": "Every 90 days.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer, which is the frequency of secret rotation."
+      },
+      {
+        "id": "q20",
+        "question": "How can external researchers report vulnerabilities?",
+        "expected_doc_ids": [
+          "security_policy"
+        ],
+        "retrieved_doc_ids": [
+          "oncall_runbook",
+          "payments_service_overview",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "External security researchers can report vulnerabilities through the bug-bounty program.",
+        "reference_answer": "Through the bug-bounty program.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact of the reference answer with slightly different wording."
+      },
+      {
+        "id": "q21",
+        "question": "What naming convention is used for multi-word API resources?",
+        "expected_doc_ids": [
+          "api_style_guide"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "Kebab-case is used for multi-word API resources, as seen in the example `/order-items`.",
+        "reference_answer": "Kebab-case, with plural nouns for collections.",
+        "answer_score": 0,
+        "judge_reasoning": "The generated answer is missing the key fact that plural nouns are used for collections."
+      },
+      {
+        "id": "q22",
+        "question": "What HTTP status code is used for rate limiting in the API style guide?",
+        "expected_doc_ids": [
+          "api_style_guide"
+        ],
+        "retrieved_doc_ids": [
+          "api_style_guide",
+          "architecture_decision_api",
+          "incident_postmortem_api"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "429 is the HTTP status code used for rate limiting in the API style guide.",
+        "reference_answer": "429.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer correctly captures the key fact of the reference answer."
+      },
+      {
+        "id": "q23",
+        "question": "How long does an on-call engineer have to acknowledge a page?",
+        "expected_doc_ids": [
+          "oncall_runbook"
+        ],
+        "retrieved_doc_ids": [
+          "incident_postmortem_db",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "An on-call engineer has 5 minutes to acknowledge a page.",
+        "reference_answer": "5 minutes.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key fact of the reference answer."
+      },
+      {
+        "id": "q24",
+        "question": "What should on-call do first if a recent deploy correlates with an alert?",
+        "expected_doc_ids": [
+          "oncall_runbook"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "incident_postmortem_db",
+          "oncall_runbook"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "If a recent deploy is the likely cause of an alert, the on-call engineer should rollback first and then investigate the root cause after service is restored.",
+        "reference_answer": "Rollback first, then investigate the root cause after service is restored.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer."
+      },
+      {
+        "id": "q25",
+        "question": "When is a postmortem required after an incident?",
+        "expected_doc_ids": [
+          "oncall_runbook"
+        ],
+        "retrieved_doc_ids": [
+          "incident_postmortem_db",
+          "oncall_runbook",
+          "security_policy"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "A postmortem is required within 3 business days after an incident that causes customer-visible impact.",
+        "reference_answer": "Within 3 business days, for any incident causing customer-visible impact.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer accurately captures the key facts of the reference answer."
+      },
+      {
+        "id": "q26",
+        "question": "How many external payment processors does the payments service integrate with?",
+        "expected_doc_ids": [
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "architecture_decision_db",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The payments service integrates with two external payment processors for redundancy.",
+        "reference_answer": "Two, for redundancy.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the number of payment processors and the reason for integration."
+      },
+      {
+        "id": "q27",
+        "question": "What test suite must pass before deploying changes to the payments service?",
+        "expected_doc_ids": [
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "The full transaction-simulation test suite must pass before deploying changes to the payments service. This test suite replays a fixed set of historical transaction patterns against a sandboxed processor.",
+        "reference_answer": "The transaction-simulation test suite, which replays historical transaction patterns against a sandboxed processor.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key facts of the reference answer, including the test suite name and its functionality."
+      },
+      {
+        "id": "q28",
+        "question": "Does the payments service share an on-call rotation with general engineering?",
+        "expected_doc_ids": [
+          "payments_service_overview"
+        ],
+        "retrieved_doc_ids": [
+          "deploy_guide",
+          "onboarding_eng",
+          "payments_service_overview"
+        ],
+        "retrieval_hit": true,
+        "generated_answer": "No, the payments service has a dedicated on-call rotation separate from general engineering on-call.",
+        "reference_answer": "No, it has its own dedicated on-call rotation due to regulatory and financial sensitivity.",
+        "answer_score": 1,
+        "judge_reasoning": "The generated answer captures the key fact that the payments service has a dedicated on-call rotation separate from general engineering."
+      }
+    ]
+  }
+]
